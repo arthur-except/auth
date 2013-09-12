@@ -13,12 +13,14 @@ import org.springframework.security.access.SecurityConfig;
 import org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource;
 import org.springframework.security.access.method.MapBasedMethodSecurityMetadataSource;
 import org.springframework.security.access.method.MethodSecurityMetadataSource;
+import org.springframework.stereotype.Component;
 
 import com.arthur.auth.constant.AuthConstant.ResourceType;
 import com.arthur.auth.domain.Resource;
 import com.arthur.auth.service.impl.MethodSourceFetcher;
 import com.arthur.auth.utils.BeanUtils;
 
+@Component
 public class MethodSourceBuilder implements SourceBuilder {
 
 	private static final Logger LOGGER = LoggerFactory

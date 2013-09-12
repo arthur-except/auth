@@ -3,5 +3,7 @@
 <configuration>
 	<typeAliases>
 		<typeAlias type="com.arthur.auth.User" alias="User"/>
+		<typeAlias type="com.arthur.auth.Resource" alias="Resource"/>
+		<typeAlias type="com.arthur.auth.Auth" alias="Auth"/>
 	</typeAliases>
 </configuration>

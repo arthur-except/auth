@@ -5,31 +5,30 @@
 
 <mapper namespace="com.arthur.auth.mapper.UserMapper">
 
-	<sql id="user_columns">
-		id, user_name, pass_word, enable
+	<sql id="auth_columns">
+		id, user_name, role
 	</sql>
 
-	<resultMap type="User" id="user_result">
+	<resultMap type="User" id="auth_result">
 		<id column="ID" property="id" />
 		<result column="USER_NAME" property="username" />
-		<result column="PASS_WORD" property="password" />
-		<result column="ENABLE" property="enable" />
+		<result column="ROLE" property="role" />
 	</resultMap>
 
 	<insert id="insert" parameterType="User">
-		INSERT INTO USER(USER_NAME, PASS_WORD, ENABLE)
+		INSERT INTO AUTH(USER_NAME, ROLE)
 		VALUES(#{username},
-		#{password}, #{enable})
+		#{password})
 		<selectKey keyProperty="id" resultType="long" order="AFTER">
 			SELECT
 			LAST_INSERT_ID() AS id
 		</selectKey>
 	</insert>
 
-	<select id="getUserByUsername" parameterType="string" resultMap="user_result">
+	<select id="getAuthoritiesByUsername" parameterType="string" resultMap="auth_result">
 		SELECT
 		<include refid="user_columns" />
-		FROM MOCK_USER
+		FROM AUTH
 		WHERE USER_NAME = #{username}
 	</select>
 

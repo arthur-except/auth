@@ -16,7 +16,7 @@ public class Resource implements ConfigAttribute{
 	private String resourceType;
 	
 	/**
-	 * 访问该resource需要的权限角色
+	 * 访问该resource需要的权限角色,可以包含多个role，以，隔开
 	 */
 	private String role;
 	

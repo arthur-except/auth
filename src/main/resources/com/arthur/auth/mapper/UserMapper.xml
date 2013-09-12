@@ -17,7 +17,7 @@
 	</resultMap>
 
 	<insert id="insert" parameterType="User">
-		INSERT INTO MOCK_USER(USER_NAME, PASS_WORD, AGE)
+		INSERT INTO USER(USER_NAME, PASS_WORD, ENABLE)
 		VALUES(#{username},
 		#{password}, #{enable})
 		<selectKey keyProperty="id" resultType="long" order="AFTER">
@@ -26,7 +26,7 @@
 		</selectKey>
 	</insert>
 
-	<select id="getByUsername" parameterType="string" resultMap="user_result">
+	<select id="getUserByUsername" parameterType="string" resultMap="user_result">
 		SELECT
 		<include refid="user_columns" />
 		FROM MOCK_USER
