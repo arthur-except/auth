@@ -17,7 +17,7 @@ public class BeanUtils {
 			field.setAccessible(true);
 			Object value = field.get(bean);
 			
-			if(null == value){
+			if(null != value){
 				return value;
 			}else{
 				return fieldClass.newInstance();
