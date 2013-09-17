@@ -28,6 +28,7 @@ public class UrlSourceBuilder implements SourceBuilder {
 			.getLogger(UrlSourceBuilder.class);
 
 	@Autowired
+	@Qualifier("org.springframework.security.web.access.intercept.FilterSecurityInterceptor#0")
 	private FilterSecurityInterceptor filterSecurityInterceptor;
 
 	@Autowired

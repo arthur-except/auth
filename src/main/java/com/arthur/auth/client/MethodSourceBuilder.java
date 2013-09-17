@@ -8,6 +8,7 @@ import java.util.Map;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.security.access.ConfigAttribute;
 import org.springframework.security.access.SecurityConfig;
 import org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource;
@@ -27,6 +28,7 @@ public class MethodSourceBuilder implements SourceBuilder {
 			.getLogger(MethodSourceBuilder.class);
 
 	@Autowired
+	@Qualifier("org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource#0")
 	private DelegatingMethodSecurityMetadataSource delegatingMethodSecurityMetadataSource;
 
 	@Autowired

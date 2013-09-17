@@ -2,8 +2,8 @@
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 	<typeAliases>
-		<typeAlias type="com.arthur.auth.User" alias="User"/>
-		<typeAlias type="com.arthur.auth.Resource" alias="Resource"/>
-		<typeAlias type="com.arthur.auth.Auth" alias="Auth"/>
+		<typeAlias type="com.arthur.auth.domain.User" alias="User"/>
+		<typeAlias type="com.arthur.auth.domain.Resource" alias="Resource"/>
+		<typeAlias type="com.arthur.auth.domain.Auth" alias="Auth"/>
 	</typeAliases>
 </configuration>
