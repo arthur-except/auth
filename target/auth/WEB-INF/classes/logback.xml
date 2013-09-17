@@ -1,0 +1,20 @@
+<configuration>
+
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender" >
+		<!-- <withJansi>true</withJansi> -->
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<Pattern>%d{HH:mm:ss} [%thread] %-5level %logger{68} - %msg%n
+			</Pattern>
+		</layout>
+	</appender>
+
+	<!-- <logger name="com.base22" level="TRACE"/> -->
+	<logger name="org.springframework" level="INFO" />
+	<logger name="org.apache" level="INFO" />
+	<logger name="com.arthur.auth" level="DEBUG"/>
+
+
+	<root level="DEBUG">
+		<appender-ref ref="STDOUT" />
+	</root>
+</configuration>

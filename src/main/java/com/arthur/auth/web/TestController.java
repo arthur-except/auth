@@ -14,6 +14,9 @@ public class TestController {
 	@RequestMapping(value = "/user", method={RequestMethod.GET}, produces={"application/json"})
 	public @ResponseBody User testUser(){
 		User user = new User();
+		user.setEnable(true);
+		user.setPassword("arthur");
+		user.setUsername("yoyocc");
 		return user;
 	}
 

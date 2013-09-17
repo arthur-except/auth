@@ -22,21 +22,9 @@
 		<slf4j.version>1.7.0</slf4j.version>
 		<jansi.version>1.11</jansi.version>
 		<flyway.version>2.2</flyway.version>
+		<jackson.version>2.2.3</jackson.version>
+		<guava.version>14.0.1</guava.version>
 	</properties>
-
-	<!-- spring repo -->
-	<repositories>
-		<repository>
-			<id>springsource-repo</id>
-			<name>SpringSource Repository</name>
-			<url>http://repo.springsource.org/snapshot</url>
-		</repository>
-		<repository>
-			<id>springsource-repo</id>
-			<name>SpringSource Repository</name>
-			<url>http://repo.springsource.org/release</url>
-		</repository>
-	</repositories>
 
 	<dependencies>
 		<!-- spring -->
@@ -168,7 +156,7 @@
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>4.8</version>
+			<version>4.10</version>
 			<scope>test</scope>
 		</dependency>
 		<!-- servlet api -->
@@ -248,13 +236,40 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<version>${mysql.version}</version>
 		</dependency>
-		
+
 		<!-- flyway -->
 		<dependency>
 			<groupId>com.googlecode.flyway</groupId>
 			<artifactId>flyway-core</artifactId>
 			<version>${flyway.version}</version>
 		</dependency>
+
+		<!-- google guava -->
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>${guava.version}</version>
+		</dependency>
+
+		<!-- jackson -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>${jackson.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-annotations</artifactId>
+			<version>${jackson.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-core</artifactId>
+			<version>${jackson.version}</version>
+		</dependency>
+
+
 	</dependencies>
 	<build>
 		<finalName>auth</finalName>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+      PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+      "http://www.mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.arthur.auth.mapper.AuthMapper">
+
+	<sql id="auth_columns">
+		id, user_name, role
+	</sql>
+
+	<resultMap type="User" id="auth_result">
+		<id column="ID" property="id" />
+		<result column="USER_NAME" property="username" />
+		<result column="ROLE" property="role" />
+	</resultMap>
+
+	<insert id="insert" parameterType="User">
+		INSERT INTO AUTH(USER_NAME, ROLE)
+		VALUES(#{username},
+		#{password})
+		<selectKey keyProperty="id" resultType="long" order="AFTER">
+			SELECT
+			LAST_INSERT_ID() AS id
+		</selectKey>
+	</insert>
+
+	<select id="getAuthoritiesByUsername" parameterType="string" resultMap="auth_result">
+		SELECT
+		<include refid="user_columns" />
+		FROM AUTH
+		WHERE USER_NAME = #{username}
+	</select>
+
+</mapper>
